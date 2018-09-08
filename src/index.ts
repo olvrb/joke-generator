@@ -1,9 +1,13 @@
-import { item } from './interfaces/menuItem';
-import { clear, get } from './utilities';
-const menu = require('console-menu'); // module doesn't have declaration file
 import chalk from 'chalk';
+
+// These modules don't have a declaration file so we use the regular NodeJS js way of importing them.
+const menu = require('console-menu');
 const Spinner = require('cli-spinner').Spinner;
 const Confirm = require('prompt-confirm');
+
+import { MenuItem } from './interfaces/menuItem';
+import { clear, get } from './utilities';
+
 const prompt = new Confirm({
     name: 'keep',
     message: 'Keep going?'
@@ -12,7 +16,7 @@ const spinner = new Spinner('%s Please wait...');
 spinner.setSpinnerString(13);
 clear();
 
-const f = () => {
+const makeJoke = () => {
     clear();
     menu(
         [
@@ -26,7 +30,7 @@ const f = () => {
                 'Please select which kind of joke you would like to generate.',
             border: false
         }
-    ).then(async (item: item) => {
+    ).then(async (item: MenuItem) => {
         clear();
         if (item) {
             switch (item.title) {
@@ -72,7 +76,7 @@ const f = () => {
                 }
             }
             prompt.ask((answer: any) => {
-                if (answer) return f();
+                if (answer) return makeJoke(); // r e c u r s i o n
                 return;
             });
         } else {
@@ -81,4 +85,4 @@ const f = () => {
     });
 };
 
-f();
+makeJoke();

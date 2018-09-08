@@ -1,6 +1,7 @@
 import request from 'request';
+// Promisify request
+// since request's body callback parameter is any, so is ours.
 const get = (url: string): any => {
-    //TODO: create interface for return type
     return new Promise<any>((resolve, reject) => {
         request.get(
             {
