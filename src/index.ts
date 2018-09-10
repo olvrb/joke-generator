@@ -1,3 +1,4 @@
+// Thanks for having a declaration file, chalk.
 import chalk from 'chalk';
 
 // These modules don't have a declaration file so we use the regular NodeJS js way of importing them.
@@ -8,11 +9,14 @@ const Confirm = require('prompt-confirm');
 import { MenuItem } from './interfaces/menuItem';
 import { clear, get } from './utilities';
 
+// Initializations
 const prompt = new Confirm({
     name: 'keep',
     message: 'Keep going?'
 });
 const spinner = new Spinner('%s Please wait...');
+
+// Configuration
 spinner.setSpinnerString(13);
 clear();
 
