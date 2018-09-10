@@ -6,6 +6,7 @@ const menu = require('console-menu');
 const Spinner = require('cli-spinner').Spinner;
 const Confirm = require('prompt-confirm');
 
+// Import utilities, interfaces.
 import { clear, get } from './index';
 import { MenuItem } from '../interfaces/menuItem';
 
