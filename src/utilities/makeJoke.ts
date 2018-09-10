@@ -18,7 +18,7 @@ const prompt = new Confirm({
 const spinner = new Spinner('%s Please wait...');
 
 // Configuration
-spinner.setSpinnerString(13);
+spinner.setSpinnerString(9);
 
 export const makeJoke = () => {
     clear();
@@ -79,7 +79,7 @@ export const makeJoke = () => {
                     break;
                 }
             }
-            prompt.ask((answer: any) => {
+            prompt.ask((answer: boolean) => {
                 if (answer) return makeJoke(); // r e c u r s i o n
                 return;
             });
