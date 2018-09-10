@@ -4,3 +4,4 @@ const clear = (): void => {
 
 export { clear };
 export { get } from './http';
+export { makeJoke } from './makeJoke';
