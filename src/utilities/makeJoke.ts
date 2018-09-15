@@ -28,7 +28,7 @@ export const makeJoke = () => {
             { hotkey: '2', title: 'Normal joke' },
             { hotkey: '3', title: 'Yo momma joke' },
             { separator: true }
-        ],
+        ], //test
         {
             header:
                 'Please select which kind of joke you would like to generate.',
